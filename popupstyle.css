@@ -1,0 +1,16 @@
+.button {
+	width: 100px;
+	height:50px;
+	cursor:pointer;
+	text-align:center;
+	vertical-align:middle;
+}
+
+#start {
+	background-color:green;
+}
+
+#stop {
+	background-color:red;
+	color:white;
+}
