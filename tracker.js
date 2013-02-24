@@ -4,6 +4,7 @@ var currentSeconds = 0,
 	tab = null,
 	timertoken = null,
 	myport = null,
+	last_move = null,
 	data = {
 		"clicks": {"left": 0, "right": 0},
 		"scrolls": {"up": 0, "down": 0},
@@ -22,6 +23,7 @@ function insertResults() {
 		div = $("<div></div>");
 		div.attr("id", "insertedResult");
 		body.prepend(div);
+		div.css("font-family", "Menlo, Courier, monospace" );
 		div.css("border", "3px solid red");
 		div.css("height", "150px");
 		div.css("overflow", "scroll");
@@ -41,7 +43,16 @@ function clickHandler(evt) {
 }
 
 function moveHandler(evt) {
-	data.path += Math.sqrt(Math.pow(evt.offsetX, 2) + Math.pow(evt.offsetY, 2));
+	if ( last_move == null ) {
+		last_move = [evt.offsetX, evt.offsetY];
+		return;
+	}
+	var a = last_move[ 0 ] - evt.offsetX;
+	var b = last_move[ 1 ] - evt.offsetY;
+	var c = Math.sqrt( a*a + b*b );
+	console.log( a, b, c );
+	data.path += c;
+	last_move = [ evt.offsetX, evt.offsetY ];
 }
 
 function scrollHandler(evt) {
