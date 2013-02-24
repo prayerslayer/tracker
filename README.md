@@ -4,7 +4,7 @@ This is a simple Chrome extension that allows you to track mouse and keyboard fo
 
 ## Installation
 
-Look [here](http://code.google.com/chrome/extensions/getstarted.html#load).
+Look [here](http://developer.chrome.com/extensions/getstarted.html#unpacked).
 
 ## Usage
 
@@ -12,7 +12,7 @@ Click on the extension icon, then enter the amount of seconds you want to track 
 
 ## JSON Format
 
-data = {  
+    data = {  
 		"clicks": {  
 			"left": int,  
 			"right": int  
@@ -26,4 +26,4 @@ data = {
 		"keyboard": char array  
 	}  
 	
-Please note that scrolls.up and scrolls.down do not work right now because MouseWheel Events are a pain in the ass.
+Please note that scrolls.up and scrolls.down do not work right now because I was too lazy to make it work.
