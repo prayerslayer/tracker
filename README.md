@@ -21,7 +21,7 @@ Click on the extension icon, then enter the amount of seconds you want to track 
 			"up": int,   
 			"down": int  
 		},  
-		"path": int,  
+		"path": float,  
 		"time_left": int,  
 		"keyboard": char array  
 	}  
